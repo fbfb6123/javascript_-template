@@ -38,13 +38,23 @@ class Vector2 {
     };
 
     lengthSq() {
-        return this.x *this.x + this.y * this.y
+        return this.x * this.x + this.y * this.y
     };
 
     add(that) {
         this.x += that.x
         this.y += that.y
     };
+
+    get length() {
+        return Math.sqrt(this.lengthSq()) //Math.sqrtは二乗値を返す
+    }
+
+    set length(len) {
+        const ratio = len / this.length
+        this.x *= ratio
+        this.y *= ratio
+    }
 }
 
 class Vector3 extends Vector2 {
@@ -63,17 +73,17 @@ class Vector3 extends Vector2 {
     };
 }
 
-let v3a = new Vector3(1, 4, 5) //インスタンスを生成
-console.log(v3a);
+let vec = new Vector2(3, 4) //インスタンスを生成
+console.log(vec);
 
-v3a.lengthSq()
-console.log(v3a);
+vec.lengthSq()
+console.log(vec);
 
-let v3b = new Vector3(41, 38, 37);
-console.log(v3b);
+vec.lengthSq = 50;
+console.log(vec);
 
-v3a.add(v3b);
-console.log(v3a);
+vec
+console.log(vec);
 
 </script>
 </body>
