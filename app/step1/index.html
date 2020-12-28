@@ -35,25 +35,32 @@ class Vector2 {
     constructor(x, y) {
         this.x = x
         this.y = y
-    }
+    };
+
     lengthSq() {
         return this.x *this.x + this.y * this.y
-    }
+    };
+
+    add(that) {
+        this.x += that.x
+        this.y += that.y
+    };
 }
 
 class Vector3 extends Vector2 {
     constructor(x, y, z){
-        super(x,y)
+        super(x, y)
         this.z = z
-    }
+    };
 
     lengthSq() {
         return super.lengthSq() + this.z * this.z
-    }
+    };
 
     add(that) {
+        super.add(that)
         this.z += that.z
-    }
+    };
 }
 
 let v3a = new Vector3(1, 4, 5) //インスタンスを生成
