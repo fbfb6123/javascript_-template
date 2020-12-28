@@ -52,12 +52,20 @@ class Vector3 extends Vector2 {
     }
 
     add(that) {
-        super.add(that)
         this.z += that.z
     }
 }
 
-let v3a = new Vector3(1, 4, 5)
+let v3a = new Vector3(1, 4, 5) //インスタンスを生成
+console.log(v3a);
+
+v3a.lengthSq()
+console.log(v3a);
+
+let v3b = new Vector3(41, 38, 37);
+console.log(v3b);
+
+v3a.add(v3b);
 console.log(v3a);
 
 </script>
