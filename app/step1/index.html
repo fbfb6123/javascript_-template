@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ハンズオンJavaScript</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>ハンズオン形式で学ぶJavaScript</h1>
+
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p>ブラウザのコンソールを開きます。</p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script src="script.js"></script>
+<script>
+'use strict';
+
+class Vector2 {
+    constructor(x, y) {
+        this.x = x
+        this.y = y
+    }
+    lengthSq() {
+        return this.x *this.x + this.y * this.y
+    }
+}
+
+class Vector3 extends Vector2 {
+    constructor(x, y, z){
+        super(x,y)
+        this.z = z
+    }
+
+    lengthSq() {
+        return super.lengthSq() + this.z * this.z
+    }
+
+    add(that) {
+        super.add(that)
+        this.z += that.z
+    }
+}
+
+let v3a = new Vector3(1, 4, 5)
+console.log(v3a);
+
+</script>
+</body>
+</html>
