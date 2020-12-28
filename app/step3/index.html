@@ -18,7 +18,7 @@
 <main>
 <div class="container">
 <section>
-    <p>静的メソッドを定義する</p>
+    <p>クラスを式で定義する</p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -30,25 +30,27 @@
 <script>
 'use strict';
 
-class Vector2 {
-    static instanceCount = 0
-
-
-    static incrementCount() {
-    this.instanceCount++
-}
-
+const Vector2 = class {
     constructor(x, y) {
-        this.x = x
-        this.y = y
-        Vector2.incrementCount()
+        this.x = x;
+        this.y = y;
     }
 }
 
-let vec = new Vector2(1,1);
-console.log(vec)
+let vec2 = new Vector2(3,4);
+console.log(vec2);
 
-Vector2.instanceCount
+const Vector3 = class extends Vector2 {
+    constructor(x, y, z) {
+        super(x,y)
+        this.z = z;
+    }
+}
+
+
+let vec3 = new Vector3(3,4,6);
+console.log(vec3);
+
 
 </script>
 </body>
