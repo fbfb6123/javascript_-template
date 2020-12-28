@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>2-02_tag</title>
+<title>ハンズオンJavaScript</title>
 <link href="../../_common/images/favicon.ico" rel="shortcut icon">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
 <link href="../../_common/css/style.css" rel="stylesheet">
@@ -11,14 +11,14 @@
 <body>
 <header>
 <div class="container">
-<h1>JavaScriptはどこに書く？</h1>
-<h2>JavaScriptファイルを読み込む</h2>
+<h1>ハンズオン形式で学ぶJavaScript</h1>
+
 </div><!-- /.container -->
 </header>
 <main>
 <div class="container">
 <section>
-    <p>ブラウザのコンソールを開きます。</p>
+    <p>静的メソッドを定義する</p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -27,10 +27,28 @@
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
 </footer>
-<script src="script.js"></script>
 <script>
 'use strict';
-console.log('よく柿食う客だ');
+
+class Vector2 {
+    static instanceCount = 0
+
+
+    static incrementCount() {
+    this.instanceCount++
+}
+
+    constructor(x, y) {
+        this.x = x
+        this.y = y
+        Vector2.incrementCount()
+    }
+}
+
+
+
+
+
 </script>
 </body>
 </html>
