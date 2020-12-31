@@ -30,7 +30,7 @@
 // Object.formEntries関数を使用するとプロパティの名前と値を指定して単純なオブジェクトが生成できる
 // Object.create関数を使用するとプロトタイプとプロパティを指定してオブジェクトを生成できる
 
-const vec = Object.create(Object.prototype, {
+let vec = Object.create(Object.prototype, {
   x: {
     value: 3,
     writable: true,
