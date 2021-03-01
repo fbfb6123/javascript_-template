@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ハンズオンJavaScript</title>
+</head>
+<body>
+<header>
+<div class="container">
+<h1>ハンズオン形式で学ぶJavaScript</h1>
+
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p>オブジェクトリテラル 148~</p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+'use strict';
+
+// Object.formEntries関数を使用するとプロパティの名前と値を指定して単純なオブジェクトが生成できる
+// Object.create関数を使用するとプロトタイプとプロパティを指定してオブジェクトを生成できる
+
+let vec = Object.create(Object.prototype, {
+  x: {
+    value: 3,
+    writable: true,
+    enumerable: true,
+  },
+  y: {
+    value: 4,
+    writable: true,
+    enumerable: true,
+  },
+  length: {
+    enumerable: false,
+    get: function() {
+      return Math.sqrt(this.x * this.x + this.y * this.y)
+    },
+    set: function (len) {
+      const current = this.length
+      this.x *= len/current
+      this.y *= len/current
+    }
+  }
+})
+
+
+
+</script>
+</body>
+</html>
